@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 export const NavBar = () => (
-  <nav className="navbar navbar-expand-lg navbar-light bg-light">
+  <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
     <div className="navbar-brand">
-      Navbar
+    Lugares de Vacunacion Covid-19 - La Rioja
     </div>
     <button
       className="navbar-toggler"
@@ -17,16 +17,21 @@ export const NavBar = () => (
     >
       <span className="navbar-toggler-icon"></span>
     </button>
-    <div className="collapse navbar-collapse" id="navbarNav">
+    <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul className="navbar-nav">
         <li className="nav-item active">
           <Link className="nav-link" to="/">
-            Home
+            Inicio
           </Link>
         </li>
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <Link className="nav-link" to="/users">
-            Usuarios
+            Users
+          </Link>
+        </li> */}
+        <li className="nav-item">
+          <Link className="nav-link" to="/admin">
+            Administración
           </Link>
         </li>
       </ul>

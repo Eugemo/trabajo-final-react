@@ -1,4 +1,50 @@
 .leaflet-container {
     height: 420px;
     width: 100%;
-  }
+}
+
+.Home {
+    font-family: 'Oxygen', sans-serif;
+    height: 100vh;
+    background: rgb(77,77,82);
+    background: linear-gradient(0deg, 
+    rgba(77,77,82,1) 0%,
+    rgba(182,118,190,0.9332107843137255) 54%,
+    rgba(152,203,213,1) 100%);
+}
+
+.text {
+ text-align: center;
+ padding: 5px;
+}  
+
+.card:hover {
+  box-shadow: 5px 10px 20px 1px rgba(255, 255, 255, 0.273) !important;
+  transition: all 0.7s linear;
+}
+
+.card-body {
+  padding: 2rem 0 !important;
+}
+
+.card-text {
+  padding: 0.3rem 1rem;
+  font-size: 1rem;
+}
+
+.card-title {
+  color: black;
+}
+
+.overflow {
+  overflow: hidden;
+}
+
+.card-img-top {
+  transform: scale(1);
+  transition: all 0.2s ease-in-out;
+}
+
+.card-img-top:hover {
+  transform: scale(1.8);
+}
