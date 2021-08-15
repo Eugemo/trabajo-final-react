@@ -22,7 +22,7 @@ export class UsersView extends Component {
     }
 
     render(){
-        return(
+         return(
             <div>
                 Pagina de Usuarios
                 { this.props.loading && "Cargando Usuarios"}

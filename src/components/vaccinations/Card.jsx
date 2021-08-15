@@ -1,14 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "../../assets/styles.css";
 
 function Card({ imageSource, title, address, url }) {
   return (
     <div className="card text-center bg-ligth animate__animated animate__fadeInUp">
       <div className="overflow">
-        <img src={imageSource} alt="a wallpaper" className="card-img-top" />
+        <img src={imageSource} alt="a wallpaper" className="card-img-top" style={{height: 150}} />
       </div>
-      <div className="card-body text-light">
+      <div className="card-body text-light" style={{height: 200}}>
         <h4 className="card-title">{title}</h4>
         <p className="card-text text-secondary">
           {address
@@ -18,10 +17,10 @@ function Card({ imageSource, title, address, url }) {
         <a
           href={url ? url : "#!"}
           target="_blank"
-          className="btn btn-outline-secondary border-0"
+          className="btn btn-outline-primary border-2"
           rel="noreferrer"
         >
-          Go to {title}
+          Ver mapa
         </a>
       </div>
     </div>
@@ -30,9 +29,9 @@ function Card({ imageSource, title, address, url }) {
 
 Card.propTypes = {
   title: PropTypes.string.isRequired,
-  address: PropTypes.string,
-  url: PropTypes.string,
-  imageSource: PropTypes.string
+  address: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  imageSource: PropTypes.string.isRequired
 };
 
 export default Card;

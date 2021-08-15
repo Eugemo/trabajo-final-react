@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const NavBar = () => (
   <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div className="navbar-brand">
+    <div className="navbar-brand">{'  '}
     Lugares de Vacunacion Covid-19 - La Rioja
     </div>
     <button
