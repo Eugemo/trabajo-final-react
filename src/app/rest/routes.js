@@ -1,7 +1,7 @@
 const base = process.env.REACT_APP_API_BASE_URL;
 
 const routes = {
-    root: () => `${base}/`,
+    root: () => `${base}`,
     placesVaccine: () => `${base}/places`,
     placesByIdVaccine: (id) => `${base}/places/${id}`,
 

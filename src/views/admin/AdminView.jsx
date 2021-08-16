@@ -7,15 +7,13 @@ export class AdminView extends React.Component {
   render() {
     return (
       <>
-        <Container className="body-puestos">
-          <h1>Listado Puestos de Vacunacion</h1>
-         
+        <Container className="body-puestos Home">
+          <h1>Listado Puestos de Vacunacion</h1>         
           <Button color="success" >
             Crear Puesto
           </Button>
           <br />
-          <br />
-         
+          <br />         
           <Table className="table table-striped table-success aling-middle">
             <thead>
               <tr>
@@ -25,15 +23,17 @@ export class AdminView extends React.Component {
                 <th>Latitud</th>
                 <th>Longitud</th>
                 <th>Url</th>
+                <th>Acciones</th>                
               </tr>
             </thead>
             <tbody>
-                    <Button>
-                      Eliminar
+                    <Button color="primary" size= 'xl'>
+                      Modificar
                     </Button>
-         
-            </tbody>
-         
+                    <Button color="danger">
+                      Eliminar
+                    </Button>         
+            </tbody>         
           </Table>
         </Container>
       </>

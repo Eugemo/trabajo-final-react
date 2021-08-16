@@ -12,17 +12,13 @@ export class VaccinationAdminView extends Component{
             </ModalHeader>
             <ModalBody>
               <FormGroup>
-                <label>Posicion:</label>
+                <label>Dirección</label>
                 <input />
               </FormGroup>
-
               <FormGroup>
-                <label>Empresa:</label>
-                <select>
-                  <option value="">Elija Empresa</option>
-                </select>
-              </FormGroup>
-
+                <label>Longitud</label>
+                <input />
+              </FormGroup>        
               <FormGroup>
                 <label>Descripcion:</label>
                 <input/>

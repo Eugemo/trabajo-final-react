@@ -16,7 +16,14 @@
 .text {
  text-align: center;
  padding: 5px;
-}  
+}
+
+.footer {
+  color: rgb(156, 151, 151);
+  background: rgb(10, 10, 10);
+  text-align: end;
+  
+}
 
 .card:hover {
   box-shadow: 5px 10px 20px 1px rgba(255, 255, 255, 0.273) !important;
