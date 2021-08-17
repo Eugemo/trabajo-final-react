@@ -5,7 +5,7 @@ import Card from "./Card";
 //  import plasticos from '../../assets/img/plasticos.jpg'
 //  import poliVargas from '../../assets/img/poliVargas.jpg'
 
- const places = []
+// let places = [];
 //  {
 //   id: 1,
 //   title: "Super Domo",
@@ -36,11 +36,12 @@ import Card from "./Card";
 //    },
 //  ];
 
-function Cards() {
+function Cards({places}) {
+  
   return (
     <div className="container d-flex justify-content-center align-items-center h-100">
       <div className="row g-4">
-        {places.map(({ title, image, url, id, address }) => (
+        {places.map(({ title, image, url, id, address  }) => (
           <div className="col-md-4" key={id}>
             <Card imageSource={image} title={title} url={url} address={address}/>
           </div>
@@ -50,4 +51,4 @@ function Cards() {
   );
 }
 
-export default Cards
+export default Cards;

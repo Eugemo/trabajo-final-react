@@ -5,7 +5,7 @@ function Card({ imageSource, title, address, url }) {
   return (
     <div className="card text-center bg-ligth animate__animated animate__fadeInUp">
       <div className="overflow">
-        <img src={imageSource} alt="a wallpaper" className="card-img-top" style={{height: 150}} />
+        <img src={imageSource} alt="Imagen no disponible" className="card-img-top" style={{height: 150}} />
       </div>
       <div className="card-body text-light" style={{height: 200}}>
         <h4 className="card-title">{title}</h4>

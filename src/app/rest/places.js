@@ -66,7 +66,7 @@ const exec = async (request) => {
     }
 }
 
-const placesVaccine = {
+const places = {
     get: (url, data = {}) => get(url, data),
     post: (url, data = {}) => post(url, data),
     delete: (url, data = {}) => delet(url, data),

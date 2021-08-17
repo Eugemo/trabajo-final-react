@@ -17,15 +17,17 @@ const mapActionsToProps = (dispatch) => ({
   deletePlaces: (id) => dispatch(deletePlacesAction(id)),
 });
 
+
 export class Home extends Component {
+     
+  componentDidMount() {
+    this.props.loadPlaces();
+  }
+
   render() {
     return (
       <div className="container d-flex justify-content-center  h-100 Home">
-        {/* <p className="text">
-          Conozca los lugares de Vacunacion contra el Covid-19 en La Rioja
-          Capital
-        </p> */}
-        
+       
         <div className="container d-flex justify-content-center align-items-center h-100">
           <Cards places={this.props.places} />
         </div>

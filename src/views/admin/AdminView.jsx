@@ -1,16 +1,30 @@
-import React from "react";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import {
+  deletePlacesAction,
+  loadPlacesAction,
+} from "../../app/redux/actions/placesActions";
+import { vaccinationPlaces } from "../../app/redux/selectors/placesSelector";
 import { Table, Button, Container } from "reactstrap";
 
+const mapStateToProps = (state) => ({
+  places: vaccinationPlaces(state),
+});
 
-export class AdminView extends React.Component {
+const mapActionsToProps = (dispatch) => ({
+  loadPlaces: () => dispatch(loadPlacesAction()),
+  deletePlaces: (id) => dispatch(deletePlacesAction(id)),
+});
+
+export class AdminView extends Component {
   
   render() {
     return (
       <>
         <Container className="body-puestos Home">
           <h1>Listado Puestos de Vacunacion</h1>         
-          <Button color="success" >
-            Crear Puesto
+          <Button color="success"  onClick={() => this.props.loadPlaces()} >
+            mostrar Puestos
           </Button>
           <br />
           <br />         
@@ -27,10 +41,12 @@ export class AdminView extends React.Component {
               </tr>
             </thead>
             <tbody>
-                    <Button color="primary" size= 'xl'>
+                    <Button color="primary" size= 'xs'>
                       Modificar
                     </Button>
-                    <Button color="danger">
+                    <Button color="danger"
+                     size= 'xs'                      
+                     onClick={() => this.props.deletePlaces("610f3b1f937bf440a04572e7")}>
                       Eliminar
                     </Button>         
             </tbody>         
@@ -41,4 +57,4 @@ export class AdminView extends React.Component {
   }
 }
 
-export default AdminView
+export default connect(mapStateToProps, mapActionsToProps)(AdminView);
