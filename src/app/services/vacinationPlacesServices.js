@@ -1,19 +1,15 @@
+import client from '../rest/client';
 import routes from '../rest/routes';
-import places from '../rest/places';
-import axios from 'axios';
 
 
-export const getPlaces = async () => {
-    try {
-        const placesVac = await axios
-        .get(`${url}/places`)
-        .catch((e) => console.log(e))
-    return placesVac.data;
-    } catch (error) {
-        return { message: 'Error', error}
-    }      
+export const cargarLugares = async () => {
+    try{
+        const res = await client.get(routes.placesVaccine());
+        return res;
+    } catch (err) {
+        console.log(err)
+    }
 }
-
 
 // const url = process.env.REACT_APP_API_BASE_URL;
 
@@ -74,4 +70,4 @@ export const getPlaces = async () => {
 //   } catch (error) {
 //     return { message: 'error', error };
 //   }
-// };
+// }; 

@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Card({ imageSource, title, address, url }) {
+function Card({ name, address, url }) {
   return (
     <div className="card text-center bg-ligth animate__animated animate__fadeInUp">
       <div className="overflow">
-        <img src={imageSource} alt="Imagen no disponible" className="card-img-top" style={{height: 150}} />
+        <img src={url} alt="Imagen no disponible" className="card-img-top" style={{height: 150}} />
       </div>
       <div className="card-body text-light" style={{height: 200}}>
-        <h4 className="card-title">{title}</h4>
+        <h4 className="card-title">{name}</h4>
         <p className="card-text text-secondary">
           {address
             ? address

@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import Cards from "../components/vaccinations/Cards";
 import {
   deletePlacesAction,
-  loadPlacesAction,
+    loadVaccinationPlaces,
 } from "../app/redux/actions/placesActions";
 import { vaccinationPlaces } from "../app/redux/selectors/placesSelector";
 
@@ -13,30 +13,29 @@ const mapStateToProps = (state) => ({
 });
 
 const mapActionsToProps = (dispatch) => ({
-  loadPlaces: () => dispatch(loadPlacesAction()),
+  loadPlaces: () => dispatch(loadVaccinationPlaces()),
   deletePlaces: (id) => dispatch(deletePlacesAction(id)),
 });
 
 
 export class Home extends Component {
-     
-  componentDidMount() {
-    this.props.loadPlaces();
+  
+  componentDidMount(){
+    this.props.loadPlaces()
   }
-
   render() {
-    return (
-      <div className="container d-flex justify-content-center  h-100 Home">
+    return (      
+      <div className="Home container d-flex justify-content-center  h-100">
        
         <div className="container d-flex justify-content-center align-items-center h-100">
           <Cards places={this.props.places} />
         </div>
-        <button
+        {/* <button
           className="btn btn-success"
           onClick={() => this.props.loadPlaces()}
         >
           Cargar Lugares
-        </button>
+        </button> */}
         <button
           className="btn btn-danger"
           onClick={() => this.props.deletePlaces("610f3b1f937bf440a04572e7")}

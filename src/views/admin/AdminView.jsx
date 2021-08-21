@@ -21,7 +21,7 @@ export class AdminView extends Component {
   render() {
     return (
       <>
-        <Container className="body-puestos Home">
+        <Container className="Home">
           <h1>Listado Puestos de Vacunacion</h1>         
           <Button color="success"  onClick={() => this.props.loadPlaces()} >
             mostrar Puestos
