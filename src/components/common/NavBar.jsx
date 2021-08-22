@@ -34,6 +34,11 @@ export const NavBar = () => (
             Administración
           </Link>
         </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/map">
+            Mapa
+          </Link>
+        </li>
       </ul>
     </div>
   </nav>

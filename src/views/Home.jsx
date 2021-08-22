@@ -36,12 +36,12 @@ export class Home extends Component {
         >
           Cargar Lugares
         </button> */}
-        <button
+        {/* <button
           className="btn btn-danger"
           onClick={() => this.props.deletePlaces("610f3b1f937bf440a04572e7")}
         >
           Borrar un lugar
-        </button>
+        </button> */}
         
       </div>
       
