@@ -4,7 +4,7 @@ import Home from './views/Home';
 import { NavBar } from './components/common/NavBar';
 import AdminView from './views/admin/AdminView';
 import Footer from './components/common/Footer';
-import {MapView} from './views/map/MapView';
+import VaccinationPlace from './views/vaccinations/VaccinationPlace';
 
 class App extends Component {
   
@@ -14,8 +14,8 @@ class App extends Component {
         <NavBar />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/admin" component={AdminView} />
-          <Route exact path="/map" component={MapView} />
+          <Route exact path="/places/:id" component={VaccinationPlace} />
+          <Route exact path="/admin" component={AdminView} />                  
         </Switch>      
       <Footer />
       </>

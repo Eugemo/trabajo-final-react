@@ -1,15 +1,34 @@
 import React from "react";
-import Card from "./Card";
+import { Link } from "react-router-dom";
 
-function Cards({places}) {
-  
+function Cards({ places }) {
   return (
     <div className="container justify-content-center align-items-center h-100">
       <div className="row g-4">
-        
-        {places?.map(({ _id, name, address, url, latitude, longitude }) => (
+        {places?.map(({ _id, name, address, url }) => (
           <div className="col-md-4" key={_id}>
-            <Card imageSource={url} title={name} url={url} address={address} lat={latitude} log={longitude} />
+            <div className="card text-center bg-ligth animate__animated animate__fadeInUp">
+              <div className="overflow">
+                <img
+                  src={url}
+                  alt="Imagen no disponible"
+                  className="card-img-top"
+                  style={{ height: 150 }}
+                />
+              </div>
+              <div className="card-body text-light" style={{ height: 200 }}>
+                <h4 className="card-title">{name || "sin nombre"}</h4>
+                <p className="card-text text-secondary">
+                  {address || "Domicilio"}
+                </p>
+                <Link
+                  className="btn btn-outline-primary border-2"
+                  to={`/places/${_id}`}
+                >
+                  Ver Mapa
+                </Link>
+              </div>
+            </div>
           </div>
         ))}
       </div>

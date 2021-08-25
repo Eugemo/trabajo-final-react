@@ -1,9 +1,8 @@
-import axios from 'axios';
 import React, { Component } from 'react';
 import { Button, Modal, ModalBody, ModalFooter, FormGroup, ModalHeader } from "reactstrap";
 import {
   deletePlacesAction,
-  loadPlacesAction,
+  loadVaccinationPlaces,
 } from "../../app/redux/actions/placesActions";
 import { vaccinationPlaces } from "../../app/redux/selectors/placesSelector";
 import { connect } from "react-redux";
@@ -13,22 +12,15 @@ const mapStateToProps = (state) => ({
 });
 
 const mapActionsToProps = (dispatch) => ({
-  loadPlaces: () => dispatch(loadPlacesAction()),
+  loadPlaces: () => dispatch(loadVaccinationPlaces()),
   deletePlaces: (id) => dispatch(deletePlacesAction(id)),
 });
 
 
-const url = process.env.REACT_APP_API_BASE_URL;
-
 export class AdminForm extends Component {
-  state={
-    places:[]
-  }
-   placesGet=()=>{
-     axios.get(url).then(response=>(console.log(response.places)))
-   }
-   componentDidMount() {
-     this.placesGet()
+  
+  componentDidMount() {
+    this.props.loadPlaces()
    }
 
     render() {
@@ -46,11 +38,15 @@ export class AdminForm extends Component {
                   <input />
                 </FormGroup>
                 <FormGroup>
+                  <label>Latitud</label>
+                  <input />
+                </FormGroup>
+                <FormGroup>
                   <label>Longitud</label>
                   <input />
                 </FormGroup>        
                 <FormGroup>
-                  <label>Descripcion:</label>
+                  <label>Url Imagen</label>
                   <input/>
                 </FormGroup>
               </ModalBody>
