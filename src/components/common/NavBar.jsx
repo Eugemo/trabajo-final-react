@@ -1,10 +1,12 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from 'react-router-dom';
+import { faSyringe } from '@fortawesome/free-solid-svg-icons';
 
 export const NavBar = () => (
   <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
     <div className="navbar-brand">{'  '}
-    Lugares de Vacunacion Covid-19 - La Rioja
+    <FontAwesomeIcon icon={faSyringe}>{" "}</FontAwesomeIcon>{"   "}Lugares de Vacunacion Covid-19 - La Rioja
     </div>
     <button
       className="navbar-toggler"

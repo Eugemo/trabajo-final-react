@@ -1,3 +1,5 @@
+import { faMapMarkedAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -24,8 +26,8 @@ function Cards({ places }) {
                 <Link
                   className="btn btn-outline-primary border-2"
                   to={`/places/${_id}`}
-                >
-                  Ver Mapa
+                ><FontAwesomeIcon icon={faMapMarkedAlt}>{" "}</FontAwesomeIcon>
+                   . Ver Mapa
                 </Link>
               </div>
             </div>

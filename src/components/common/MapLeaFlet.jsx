@@ -14,15 +14,6 @@ let DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 
-// const mapStateToProps = (state) => ({
-//   places: vaccinationPlaces(state),
-// });
-
-// const mapActionsToProps = (dispatch) => ({
-//   loadPlaces: () => dispatch(loadVaccinationPlaces()),
-//   deletePlaces: (id) => dispatch(deletePlacesAction(id)),
-// });
-
 L.Marker.prototype.options.icon = DefaultIcon;
 
 const MapLeafLet = ({place}) => {

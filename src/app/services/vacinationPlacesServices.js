@@ -11,63 +11,38 @@ export const cargarLugares = async () => {
     }
 }
 
-// const url = process.env.REACT_APP_API_BASE_URL;
+export const lugarById = async ({id}) => {
+    try {
+        const res = await client.get(routes.placesByIdVaccine({id}));
+        return res;
+    } catch (err) {
+        console.log(err)        
+    }
+}
 
-// export const getPlaces = async () => {
-//   try {
-//     const places = await axios
-//       .get(`${url}/places`)
-//       .catch((e) => console.log(e));
-//     return places.data;
-//   } catch (error) {
-//     return { message: 'error', error };
-//   }
-// };
+// export const cambiaLugar = async ({data}) => {
+//     try {
+//         const res = await client.patch(routes.placesByIdVaccine({id}));
+//         return  places.push({ ...places, data });
+//     } catch (err) {
+//         console.log(err)
+//     }
+// }
 
-// export const getPlacesById = async (id) => {
-//   try {
-//     const places = await axios
-//       .get(`${url}/places/${id}`)
-//       .catch((e) => console.log(e));
-//     return places.data;
-//   } catch (error) {
-//     return { message: 'error', error };
-//   }
-// };
+export const borrarLugar = async ({id}) => {
+    try {
+        const res = await client.delete(routes.placesByIdVaccine({id}));
+        return res;
+    } catch (err) {
+        
+    }
+}
 
-// export const patchPlace = async (data) => {
-//   try {    
-//     await axios
-//       .patch(`${url}/places`, data)
-//       .catch((e) => console.log(e));
-//     return 'ok';
-//   } catch (error) {
-//     return { message: 'error', error };
-//   }
-// };
-
-// export const deletePlacesById = async (id) => {
-//   try {
-//     let response = '';
-//     await axios
-//       .delete(`${url}/places/${id}`)
-//       .then((a) => (response = 'ok'))
-//       .catch((e) => (response = 'error'));
-
-//     return response;
-//   } catch (error) {
-//     return { message: 'error', error };
-//   }
-// };
-
-// export const postPlace = async (data) => {
-//   try {
-//     const savedPlace = await axios
-//       .post(`${url}/places`, data)
-//       .catch((e) => console.log(e));
-
-//     return savedPlace;
-//   } catch (error) {
-//     return { message: 'error', error };
-//   }
-// }; 
+// export const crearLugar = async (data) => {
+//     try {
+//         const res = await client.post(routes.);
+//         return  places.push({ ...places, data });
+//     } catch (err) {
+//         console.log(err)
+//     }
+// }

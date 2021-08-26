@@ -11,8 +11,8 @@ const VaccinationPlaces = (props) => {
     const {id} = props?.match?.params;
     const [place, setPlace] = useState({});
 
-        useEffect(() => {        
-        setPlace(props?.places?.filter(({_id}) => _id === id )[0]);
+    useEffect(() => {        
+       setPlace(props?.places?.filter(({_id}) => _id === id )[0]);
     }, []);
 
     return (
