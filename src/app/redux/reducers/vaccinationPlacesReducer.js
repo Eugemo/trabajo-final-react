@@ -20,19 +20,19 @@ export const vaccinatiosPlacesReducer = (state = initialState, action) => {
         case CREATE_PLACES_ACTION:
             return { ...state, loaging: true, places: action.payload, error: null  };
         case CREATE_PLACES_OK:
-            return { };
+            return { ...state, loading: false, places: action.payload };
         case CREATE_PLACES_ERROR:
             return { ...state, loading: false, error: action.payload };    
         case EDIT_PLACES_ACTION:
-            return { };
+            return { ...state, loaging: true, places: action.payload, error: null };
         case EDIT_PLACES_OK:
-            return { };
+            return {  ...state, loading: false, places: action.payload };
         case EDIT_PLACES_ERROR:
             return { ...state, loading: false, error: action.payload };      
         case DELETE_PLACES_ACTION:
             return { ...state, places: state.places.filter(places => places._id !== action.payload)}
         case DELETE_PLACES_OK:
-            return { };
+            return { ...state, loading: false, places: action.payload };
         case DELETE_PLACES_ERROR:
             return { ...state, loading: false, error: action.payload };    
         default:

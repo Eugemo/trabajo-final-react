@@ -1,4 +1,4 @@
-import { cargarLugares, borrarLugar } from "../../services/vacinationPlacesServices";
+import { cargarLugares, borrarLugar, editarLugar, crearLugar } from "../../services/vacinationPlacesServices";
 
 //Action Types
 export const LOAD_PLACES = "LOAD_PLACES";
@@ -55,6 +55,34 @@ export const deleteVaccinationPlaces = (id) => {
       const places = await borrarLugar(id);
       console.log({places})
       dispatch(deletePlacesAction(id));
+    } catch(err) {
+      console.log(err);
+      const { message } = err;
+      dispatch(getPlacesError(message));
+    }
+  };
+};
+
+export const editVaccinationPlaces = (id) => {
+  return async (dispatch) => {
+    try {
+      const places = await editarLugar(id);
+      console.log({places})
+      dispatch(editPlacesAction(id));
+    } catch(err) {
+      console.log(err);
+      const { message } = err;
+      dispatch(getPlacesError(message));
+    }
+  };
+};
+
+export const createVaccinationPlaces = (placesData) => {
+  return async (dispatch) => {
+    try {
+      const places = await crearLugar(placesData);
+      console.log({places})
+      dispatch(createPlacesAction(placesData));
     } catch(err) {
       console.log(err);
       const { message } = err;
