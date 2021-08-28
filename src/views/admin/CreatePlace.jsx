@@ -14,7 +14,7 @@ const mapStateToProps = (state) => ({
     loadPlaces: () => dispatch(loadVaccinationPlaces()),
     deletePlaces: (id) => dispatch(deleteVaccinationPlaces(id)),
     editPlaces: (id) => dispatch(editVaccinationPlaces(id)),
-    createPlaces: (place) => dispatch(createVaccinationPlaces(place)),
+    createPlaces: (placeData) => dispatch(createVaccinationPlaces(placeData)),
   });
   
 function CreatePlace(props) {
@@ -27,7 +27,7 @@ function CreatePlace(props) {
 
     const dispatch = useDispatch();
 
-    function createPlace(e) {
+    function onCreatePlace(e) {
         e.preventDefault();
         const placeData = {
             id,
@@ -38,7 +38,7 @@ function CreatePlace(props) {
             url,
         };
 
-        createVaccinationPlaces(placeData);
+        dispatch(createVaccinationPlaces(placeData));
     }
 
     return (
@@ -50,7 +50,7 @@ function CreatePlace(props) {
             <Card style={{ width: '50rem', height: 400, marginTop: '50px', marginLeft: '250px' }} class="text-center">
                 <div class="container mt-10">
                     <div class="mt-3">
-                        <form onSubmit={createPlace}>
+                        <form onSubmit={onCreatePlace}>
                             <div class="form-group">
                                 <div class="input-group mb-3">
                                     <div type='text' class="input-group-prepend" >

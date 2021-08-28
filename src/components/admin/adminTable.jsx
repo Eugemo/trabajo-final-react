@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, Button, Container } from "reactstrap";
+import { Table, Container } from "reactstrap";
 import { connect } from "react-redux";
 import {
   deleteVaccinationPlaces,
@@ -29,10 +29,9 @@ function AdminTable ({ places, deletePlaces, editPlaces, createPlaces }) {
   return (
     <Container className="Home">
     <h1>Listado Puestos de Vacunacion</h1>         
-    {/* <Button color="success"  onClick={() => createPlaces()} >
-     Nuevo Lugar  .<FontAwesomeIcon icon={faPlusCircle}></FontAwesomeIcon>
-    </Button> */}
+   
     <Link className="btn btn-success border-2"
+          
           to={`/newPlace`}
           >Nuevo Lugar  .<FontAwesomeIcon icon={faPlusCircle}></FontAwesomeIcon></Link>
     <br />
@@ -58,20 +57,14 @@ function AdminTable ({ places, deletePlaces, editPlaces, createPlaces }) {
                 <td>{url ? "Si" : "No"}</td>
                 <td><Link
                   className="btn btn-primary border-2"
-                  to={`/places/${_id}`}
+                  to={`/editPlace/${_id}`}
                 ><FontAwesomeIcon icon={faEdit}></FontAwesomeIcon></Link>
                 {" "}
                 <Link
                   className="btn btn-danger border-2"
-                  to={`/places/${_id}`}
+                  onClick={() => deletePlaces(_id)}                 
                 ><FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon></Link>
-                  {/* <Button color="primary"
-                    onClick={() => editPlaces(_id)}><FontAwesomeIcon icon={faEdit}></FontAwesomeIcon>
-                    </Button> 
-                    {" "}
-                    <Button color="danger"
-                     onClick={() => deletePlaces(_id)}><FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon>
-            </Button> */}
+                  
                 </td>    
               </tr>
               ))}

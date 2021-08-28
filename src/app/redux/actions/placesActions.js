@@ -22,12 +22,12 @@ export const loadPlacesAction = (places) => ({type: LOAD_PLACES, payload: places
 export const getPlacesOk = (places) => ({ type: GET_PLACES_OK, payload: places });
 export const getPlacesError = (err) => ({ type: GET_PLACES_ERROR, payload: err });
 
-export const createPlacesAction = (body) => ({type: CREATE_PLACES_ACTION, payload: body});
-export const createPlacesActionOk = (body) => ({type: CREATE_PLACES_OK, payload: body});
+export const createPlacesAction = (placeData) => ({type: CREATE_PLACES_ACTION, payload: placeData});
+export const createPlacesActionOk = (placeData) => ({type: CREATE_PLACES_OK, payload: placeData});
 export const createPlacesError = (err) => ({type: CREATE_PLACES_ERROR, payload: err});
 
-export const editPlacesAction = (id, body) => ({type: EDIT_PLACES_ACTION, payload: id, body});
-export const editPlacesActionOk = (id, body) => ({type: EDIT_PLACES_OK, payload: id, body});
+export const editPlacesAction = (id, place) => ({type: EDIT_PLACES_ACTION, payload: id, place});
+export const editPlacesActionOk = (id, place) => ({type: EDIT_PLACES_OK, payload: id, place});
 export const editPlacesError = (err) => ({type: EDIT_PLACES_ERROR, payload: err});
 
 export const deletePlacesAction = (id) => ({type: DELETE_PLACES_ACTION, payload: id});
@@ -63,12 +63,12 @@ export const deleteVaccinationPlaces = (id) => {
   };
 };
 
-export const editVaccinationPlaces = (id) => {
+export const editVaccinationPlaces = (id, place) => {
   return async (dispatch) => {
     try {
-      const places = await editarLugar(id);
+      const places = await editarLugar(id, place);
       console.log({places})
-      dispatch(editPlacesAction(id));
+      dispatch(editPlacesAction(id, place));
     } catch(err) {
       console.log(err);
       const { message } = err;

@@ -11,22 +11,22 @@ export const cargarLugares = async () => {
     }
 }
 
-export const lugarById = async ({id}) => {
+export const lugarById = async (id) => {
     try {
-        const res = await client.get(routes.placesByIdVaccine({id}));
+        const res = await client.get(routes.placesByIdVaccine(id));
         return res;
     } catch (err) {
         console.log(err)        
     }
 }
 
-export const editarLugar = async (places, data) => {
+export const editarLugar = async (id, place) => {
     try {
         console.log('***')
-        console.log(places)
-        console.log(data)
-        const res = await client.patch(routes.placesByIdVaccine(places.id));
-        return  places.push({ ...places, data });
+        console.log(id)
+        console.log(place)
+        const res = await client.patch(routes.placesByIdVaccine(id));
+        // return  places.push({ ...places, place });
     } catch (err) {
         console.log(err)
     }
@@ -43,7 +43,7 @@ export const borrarLugar = async (id) => {
 
 export const crearLugar = async (places, placeData) => {
     try {
-        const res = await client.post(routes.placesVaccine(places));
+        const res = await client.post(routes.placesVaccine(placeData));
         return  places.push({ ...places, placeData });
     } catch (err) {
         console.log(err)
